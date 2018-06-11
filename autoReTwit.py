@@ -1,9 +1,15 @@
 import tweepy
+import sys
 
-consumer_key = '58aoH7zjwxnEg8LmnBTjt737C'
-consumer_secret = 'DDV3KoKdse1lDzZDaaZtlSpcGnH5bftxj6c42bGQufFqi3uXNW'
-access_token = '91248892-0JhKXnretakwtRPiDMJtg1hj8QN6Sq0rHHUao7KG1'
-access_token_secret = 'PKre7kzG9qGGI2mjOkjRqyCQjV3gbvwOHIKgzPjgoEomN'
+AccountCredentialsFile = sys.argv[1]
+
+with open(AccountCredentialsFile) as AccFile:
+    for item in AccFile:
+        username = item.strip().split("\t")[0]
+        consumer_key = item.strip().split("\t")[1]
+        consumer_secret = item.strip().split("\t")[2]
+        access_token = item.strip().split("\t")[3]
+        access_token_secret = item.strip().split("\t")[4]
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
