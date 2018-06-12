@@ -33,7 +33,7 @@ def main():
                 api.update_status(tweetThisText)
                 SuccessfulTweetNumber = SuccessfulTweetNumber+1
                 print("Tweet tweeted! Tweet number is ", SuccessfulTweetNumber)
-                time.sleep(random.randint(1,10))
+                time.sleep(random.randint(1,100))
             except tweepy.TweepError as e:
                 print(e.reason)
             except StopIteration:
