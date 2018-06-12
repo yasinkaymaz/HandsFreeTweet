@@ -63,7 +63,7 @@ def main():
             tweetThisText = line.strip()
             print(tweetThisText)
             try:
-###                api.update_status(tweetThisText)
+                api.update_status(tweetThisText)
                 SuccessfulTweetNumber = SuccessfulTweetNumber+1
                 print("Tweet tweeted! Tweet number is ", SuccessfulTweetNumber)
                 time.sleep(random.randint(1,100))
