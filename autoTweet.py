@@ -7,6 +7,7 @@ import random
 
 AccountCredentialsFile = sys.argv[1]
 TweetPoolFile = sys.argv[2]
+mentionPoolFile = open(sys.argv[3],"r")
 
 with open(AccountCredentialsFile) as AccFile:
     for item in AccFile:
@@ -23,14 +24,47 @@ api = tweepy.API(auth)
 user = api.me()
 print(user.name)
 
+def tweetRandomizer():
+    """
+    Randomly add mentions @ to tweet texts and add hashtags to end. Then, shuffle the lines in the output.
+    """
+    TwPoolFile = open(sys.argv[2],"r")
+    out1 = open("tmp.txt","w")
+    mentionPool = []
+    for line in mentionPoolFile:
+        target = line.strip()
+        mentionPool.append(target)
+    for line in TwPoolFile:
+        text = line.strip()
+        for mention in mentionPool:
+            tweetThisText= "Sayin "+mention+" "+text+" #1416ylsy #1416ylsyTAZMINAT"
+            out1.write(tweetThisText+"\n")
+            out1.write(line.strip()+"\n")
+    out1.close()
+    #Randomize the tweet lines in the text file:
+    out2 = open("Randomized_TweetPool.txt","w")
+    with open("tmp.txt",'r') as outfile:
+        lines = outfile.readlines()
+
+    random.shuffle(lines)
+    for line in lines:
+        out2.write(line.strip()+"\n")
+
+    return
+
+
+
+
+
 def main():
+    tweetRandomizer()
     SuccessfulTweetNumber = 0
-    with open(TweetPoolFile) as TwPool:
+    with open("Randomized_TweetPool.txt") as TwPool:
         for line in TwPool:
             tweetThisText = line.strip()
             print(tweetThisText)
             try:
-                api.update_status(tweetThisText)
+###                api.update_status(tweetThisText)
                 SuccessfulTweetNumber = SuccessfulTweetNumber+1
                 print("Tweet tweeted! Tweet number is ", SuccessfulTweetNumber)
                 time.sleep(random.randint(1,100))
@@ -43,4 +77,4 @@ def main():
 main()
 
 #How to run this script:
-#python autoTweet.py tokenKeyFile_PrinterDr.txt Randomized_TweetPool.txt
+#python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt tags.txt
