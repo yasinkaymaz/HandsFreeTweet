@@ -16,7 +16,6 @@ with open(AccountCredentialsFile) as AccFile:
         access_token = item.strip().split("\t")[3]
         access_token_secret = item.strip().split("\t")[4]
 
-
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
@@ -42,3 +41,6 @@ def main():
 
     print("Total Number of texts tweeted successfully is ", SuccessfulTweetNumber)
 main()
+
+#How to run this script:
+#python autoTweet.py tokenKeyFile_PrinterDr.txt Randomized_TweetPool.txt
