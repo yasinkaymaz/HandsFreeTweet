@@ -38,8 +38,7 @@ def tweetRandomizer():
         text = line.strip()
         for mention in mentionPool:
             tweetThisText= "Sayin "+mention+" "+text+" #1416ylsy #1416ylsyTAZMINAT"
-            out1.write(tweetThisText+"\n")
-            out1.write(line.strip()+"\n")
+            out1.write(tweetThisText+"\n"+line.strip()+"\n")
     out1.close()
     #Randomize the tweet lines in the text file:
     out2 = open("Randomized_TweetPool.txt","w")
