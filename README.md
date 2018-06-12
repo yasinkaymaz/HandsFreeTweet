@@ -26,10 +26,14 @@ Randomized_TweetPool.txt
 #### Third file you need is a text file which contains tags per line:
 $ cat tags.txt
 
-@RT_Erdogan\n
-@BA_Yildirim\n
-@TC_Basbakan\n
-@tcbestepe\n
+@RT_Erdogan
+
+@BA_Yildirim
+
+@TC_Basbakan
+
+@tcbestepe
+
 ...
 
 
