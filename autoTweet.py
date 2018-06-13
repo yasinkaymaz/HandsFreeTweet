@@ -49,7 +49,6 @@ def tweetRandomizer():
                 tweetThisText="Sayin "+mentionPool[random.randint(1,len(mentionPool)-1)]+" "+text+" #1416ylsy #1416ylsyTAZMINAT "+hashtag
             else:
                 tweetThisText= text+" #1416ylsy #1416ylsyTAZMINAT "+hashtag
-
             if len(tweetThisText) > 290:
                 print "Character limit exceeded! Skipping the tweet...", tweetThisText
             else:
@@ -63,6 +62,7 @@ def tweetRandomizer():
     for line in lines:
         out2.write(line.strip()+"\n")
 
+    os.remove("tmp.txt")
     return
 
 

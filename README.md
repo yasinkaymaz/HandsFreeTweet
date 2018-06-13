@@ -71,11 +71,25 @@ Happy tweets everybody..
 Hello world, I am friendly.
 ...
 ```
-#### Third file you need is a text file which contains tags per line:
-mentiontags.txt; Put your target twitter users to which you want to send your tweets.
+
+#### Third file you need is a text file which contains one hashtag of interest per line:
+Hastags.txt; Put your #hashtags you want to attach to your tweets into this file.
 
 ```
-$ cat mentiontags.txt
+$ cat Hastags.txt
+
+#LifeisLife
+#MondaySyndrome
+#PartyTime
+...
+
+```
+
+#### Fourth file you need is a text file which contains tags per line:
+Mentiontags.txt; Put your target @twitter_users to which you want to send your tweets.
+
+```
+$ cat Mentiontags.txt
 
 @MartinLutherKing
 @AlbertEinstein
@@ -87,12 +101,12 @@ $ cat mentiontags.txt
 ---
 
 ## Start Running your autoTweeting motor.
-Before running the script, make sure that all input files are in the same folder as autoTweet.py!
+Before running the script, make sure that all input files are in the same folder (HandsFreeTweet) as autoTweet.py!
 
 ```
 cd HandsFreeTweet
 
-python autoTweet.py tokenKeyFile.txt Tweetpool.txt mentiontags.txt
+python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hastags.txt Mentiontags.txt
 ```
 
 **Happy Tweetings!!!**
