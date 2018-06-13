@@ -1,9 +1,10 @@
 # HandsFreeTweet
 This repository provides a collection of codes for tweeting while working...
-
+**autoTweet.py** merges given hashtags with your tweets and inserts mentions randomly with a rate which will not anger twitter API.
+**autoReTweet.py** searches for tweets with certain hashtags and re-tweets them upto a certain number.
 
 ### How to install:
-Assuming that you already have python install in your computer.
+Assuming that you already have python installed in your computer.
 
 **First**, you need to install tweepy module:
 
@@ -31,20 +32,20 @@ Now it is ready to use.
 
 ### What files you need:
 
-#### Prepare a file for your twitter application account credentials :
+#### 1. Prepare a file for your twitter application account credentials :
 
 **First**, create an application from https://apps.twitter.com/
 
 **Step 1:** ![alt text](data/1.png)
 
-**Step 2: Fill the form and create the application** ![alt text](data/2.png)
+**Step 2: Fill the form and create the application.** ![alt text](data/2.png)
 
-**Step 3: Navigate to Keys and Access Token tab, and create "access token" far below** ![alt text](data/3.png)
+**Step 3: Navigate to Keys and Access Token tab, and create "my access token" far below.** ![alt text](data/3.png)
 
-**Step 4: Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below** ![alt text](data/4.png)
+**Step 4: Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret ![alt text](data/4.png)
 
 
-A tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
+Create a tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
 **Attention!**: This file has to be only 1 line!
 Example tokenKeyFile.txt file (tab separated):
@@ -55,7 +56,7 @@ $cat tokenKeyFile.txt
 TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf	1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6	6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
 ```
 
-#### Second file you need is a text file in which you store your tweets: one tweet text per line.
+#### 2. Second file you need is a text file in which you store your tweets: one tweet text per line.
 Put your tweets into this file. Please don't include any @s and #s in this file. Just plain text.
 ```
 $cat TweetPool.txt
@@ -66,7 +67,7 @@ Hello world, I am friendly.
 ...
 ```
 
-#### Third file you need is a text file which contains one hashtag of interest per line:
+#### 3. Third file you need is a text file which contains one hashtag of interest per line:
 Hastags.txt; Put your #hashtags you want to attach to your tweets into this file.
 
 ```
@@ -79,7 +80,7 @@ $ cat Hastags.txt
 
 ```
 
-#### Fourth file you need is a text file which contains tags per line:
+#### 4. Fourth file you need is a text file which contains tags per line:
 Mentiontags.txt; Put your target @twitter_users to which you want to send your tweets.
 
 ```
