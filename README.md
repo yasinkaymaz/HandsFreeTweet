@@ -56,7 +56,7 @@ TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQu
 ```
 
 #### Second file you need is a text file in which you store your tweets: one tweet text per line.
-Put your tweets into this file.
+Put your tweets into this file. Please don't include any @s and #s in this file. Just plain text.
 ```
 $cat TweetPool.txt
 
