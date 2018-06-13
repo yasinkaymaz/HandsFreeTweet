@@ -5,7 +5,7 @@ This repository provides a collection of codes for tweeting while working...
 ### How to install:
 Assuming that you already have python install in your computer.
 
-First, you need to install tweepy module:
+**First**, you need to install tweepy module:
 
 ```
 sudo pip install tweepy
@@ -18,14 +18,16 @@ sudo python setup.py install
 ```
 You can also follow the instructions here: https://github.com/tweepy/tweepy
 
-Then, download this code to your computer by typing the following:
+**Then**, download this code to your computer by typing the following:
 ```
 git clone https://github.com/yasinkaymaz/HandsFreeTweet.git
 
 cd HandsFreeTweet
 ```
 
-Now it is ready to use. 
+Now it is ready to use.
+
+---
 
 ### How to use:
 
@@ -57,6 +59,7 @@ $ cat tags.txt
 
 ...
 
+---
 
 #### Run autoTweet
 
