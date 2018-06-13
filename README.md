@@ -68,10 +68,10 @@ Hello world, I am friendly.
 ```
 
 #### 3. Third file you need is a text file which contains one hashtag of interest per line:
-Hastags.txt; Put your #hashtags you want to attach to your tweets into this file.
+Hashtags.txt; Put your #hashtags you want to attach to your tweets into this file.
 
 ```
-$ cat Hastags.txt
+$ cat Hashtags.txt
 
 #LifeisLife
 #MondaySyndrome
@@ -101,7 +101,7 @@ Before running the script, make sure that all input files are in the same folder
 ```
 cd HandsFreeTweet
 
-python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hastags.txt Mentiontags.txt
+python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hashtags.txt Mentiontags.txt
 ```
 
 **Happy Tweetings!!!**

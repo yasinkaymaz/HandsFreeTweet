@@ -87,4 +87,4 @@ def main():
 main()
 
 #How to run this script:
-#python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hastags.txt Mentiontags.txt
+#python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hashtags.txt Mentiontags.txt
