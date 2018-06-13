@@ -29,11 +29,20 @@ Now it is ready to use.
 
 ---
 
-### How to use:
+### What files you need:
 
-#### Prepare a file for your twitter account credentials :
+#### Prepare a file for your twitter application account credentials :
 
 First, create an application from https://apps.twitter.com/
+
+![alt text](data/1.png)
+
+![alt text](data/2.png)
+
+![alt text](data/3.png)
+
+![alt text](data/4.png)
+
 
 A tab separated tab file which contains in the exact order: username, consumer_key, consumer_secret, access_token, access_token_secret
 
