@@ -33,38 +33,43 @@ Now it is ready to use.
 
 #### Prepare a file for your twitter application account credentials :
 
-First, create an application from https://apps.twitter.com/
+**First**, create an application from https://apps.twitter.com/
 
 ![alt text](data/1.png)
 
+**Fill the form and create the application**
+
 ![alt text](data/2.png)
 
+**Navigate to Keys and Access Token tab, and create "access token" far below**
+
 ![alt text](data/3.png)
+
+**Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below**
 
 ![alt text](data/4.png)
 
 
-A tab separated tab file which contains in the exact order: username, consumer_key, consumer_secret, access_token, access_token_secret
+A tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
 Example tokenKeyFile.txt file (tab separated):
 
+```
 $ cat tokenKeyFile.txt
 
-TwitterUsername	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf	1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6	6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
+TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf	1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6	6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
+```
 
 #### Second file you need is a text file in which you store your tweets: one tweet text per line.
-Randomized_TweetPool.txt
+TweetPool.txt
 
 #### Third file you need is a text file which contains tags per line:
-$ cat tags.txt
+$ cat mentiontags.txt
 
-@RT_Erdogan
-
-@BA_Yildirim
-
-@TC_Basbakan
-
-@tcbestepe
+@MartinLutherKing
+@AlbertEinstein
+@AdrianaLima
+@MarkZukerberg
 
 ...
 
@@ -74,6 +79,6 @@ $ cat tags.txt
 
 cd HandsFreeTweet
 
-python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt tags.txt
+python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt mentiontags.txt
 
 ##### Limit: 25 tweets per 15mins.
