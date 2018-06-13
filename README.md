@@ -77,9 +77,12 @@ $ cat mentiontags.txt
 ---
 
 #### Run autoTweet
+Before running the script, make sure that all input files are in the same folder as autoTweet.py!
+
 ```
 cd HandsFreeTweet
 
 python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt mentiontags.txt
 ```
-##### Limit: 25 tweets per 15mins.
+
+**Happy Tweetings!!!**
