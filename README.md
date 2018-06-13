@@ -64,21 +64,22 @@ TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQu
 TweetPool.txt
 
 #### Third file you need is a text file which contains tags per line:
+```
 $ cat mentiontags.txt
 
 @MartinLutherKing
 @AlbertEinstein
 @AdrianaLima
 @MarkZukerberg
-
+```
 ...
 
 ---
 
 #### Run autoTweet
-
+```
 cd HandsFreeTweet
 
 python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt mentiontags.txt
-
+```
 ##### Limit: 25 tweets per 15mins.
