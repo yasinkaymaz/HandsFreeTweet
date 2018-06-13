@@ -1,10 +1,31 @@
 # HandsFreeTweet
-This repository provides a collection of codes for tweeting while working.
+This repository provides a collection of codes for tweeting while working...
+
 
 ### How to install:
-install tweepy: https://github.com/tweepy/tweepy
+Assuming that you already have python install in your computer.
 
+First, you need to install tweepy module:
+
+```
+sudo pip install tweepy
+```
+or
+```
+git clone https://github.com/tweepy/tweepy.git
+cd tweepy
+sudo python setup.py install
+```
+You can also follow the instructions here: https://github.com/tweepy/tweepy
+
+Then, download this code to your computer by typing the following:
+```
 git clone https://github.com/yasinkaymaz/HandsFreeTweet.git
+
+cd HandsFreeTweet
+```
+
+Now it is ready to use. 
 
 ### How to use:
 
