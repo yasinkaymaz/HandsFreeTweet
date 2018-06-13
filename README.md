@@ -53,7 +53,7 @@ Now it is ready to use.
 ![alt text](data/4.png)
 
 
-Create a tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
+Create a tab separated tab file which stores these in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
 **Attention!**: This file has to be only 1 line!
 Example tokenKeyFile.txt file (tab separated):
