@@ -52,18 +52,28 @@ Now it is ready to use.
 
 A tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
+**Attention!**: This file has to be only 1 line!
 Example tokenKeyFile.txt file (tab separated):
 
 ```
-$ cat tokenKeyFile.txt
+$cat tokenKeyFile.txt
 
 TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf	1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6	6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
 ```
 
 #### Second file you need is a text file in which you store your tweets: one tweet text per line.
-TweetPool.txt
+Put your tweets into this file.
+```
+$cat TweetPool.txt
 
+I want to fly today!
+Happy tweets everybody..
+Hello world, I am friendly.
+...
+```
 #### Third file you need is a text file which contains tags per line:
+mentiontags.txt; Put your target twitter users to which you want to send your tweets.
+
 ```
 $ cat mentiontags.txt
 
@@ -71,18 +81,18 @@ $ cat mentiontags.txt
 @AlbertEinstein
 @AdrianaLima
 @MarkZukerberg
-```
 ...
+```
 
 ---
 
-#### Run autoTweet
+## Start Running your autoTweeting motor.
 Before running the script, make sure that all input files are in the same folder as autoTweet.py!
 
 ```
 cd HandsFreeTweet
 
-python autoTweet.py tokenKeyFile_lovenzyme.txt tweetpool_v4.txt mentiontags.txt
+python autoTweet.py tokenKeyFile.txt Tweetpool.txt mentiontags.txt
 ```
 
 **Happy Tweetings!!!**
