@@ -36,13 +36,21 @@ Now it is ready to use.
 
 **First**, create an application from https://apps.twitter.com/
 
-**Step 1:** ![alt text](data/1.png)
+**Step 1:**
 
-**Step 2: Fill the form and create the application.** ![alt text](data/2.png)
+![alt text](data/1.png)
 
-**Step 3: Navigate to Keys and Access Token tab, and create "my access token" far below.** ![alt text](data/3.png)
+**Step 2: Fill the form and create the application.**
 
-**Step 4: Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret ![alt text](data/4.png)
+![alt text](data/2.png)
+
+**Step 3: Navigate to Keys and Access Token tab, and create "my access token" far below.**
+
+![alt text](data/3.png)
+
+**Step 4: Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret
+
+![alt text](data/4.png)
 
 
 Create a tab separated tab file which contains in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
