@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import tweepy
+import os
 import sys
 import time
+import tweepy
 import random
 
 TimeSecRangeTop = 25 #Tweeting time density. The higher, the rarer it tweets.
