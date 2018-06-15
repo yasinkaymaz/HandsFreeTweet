@@ -1,16 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
+
 import os
 import sys
 import time
-=======
-
-import os    
-import sys
-import time
 import pprint
->>>>>>> bda23b2b5c775a83649e71f6a28743a65494ffd9
 import tweepy
 import random
 import argparse
@@ -33,7 +27,7 @@ args = vars(parser.parse_args())
 
 
 TimeSecRangeTop = 25 #Tweeting time density. The higher, the rarer it tweets.
-men_d=10 #Density of mentions inserted into tweet texts. The higher, the more diluted. 10 means insert a random @ in evert 10 tweets.
+men_d=8 #Density of mentions inserted into tweet texts. The higher, the more diluted. 10 means insert a random @ in evert 10 tweets.
 
 #AccountCredentialsFile = sys.argv[1]
 tweetPool = open(args['messages'], 'r').read().splitlines();
@@ -47,7 +41,7 @@ random.shuffle(hashtagPool);
 random.shuffle(mentionPool);
 
 
-# Use configparser library to parse the <ini> file. 
+# Use configparser library to parse the <ini> file.
 # See the sample <ini> file for syntax and mandatory fields
 credentials = configparser.ConfigParser()
 credentials.read(args['credentials'])
@@ -61,7 +55,7 @@ except:
 
 # ------------------------------------------------------------------------- #
 
-# Console width used for pretty-printing, 
+# Console width used for pretty-printing,
 # e.g. for horizontal separators with '-'s
 cWidth = int(os.popen('stty size', 'r').read().split()[1])
 
@@ -85,8 +79,8 @@ def print_user(user, printDashes = False):
     print("Consumer Secret --- : %s" % user["cs"])
     print("Access Token ------ : %s" % user["at"])
     print("Access Token Secret : %s" % user["ats"])
-    
-    
+
+
 def print_users():
 
     if len(users) == 0:
@@ -97,7 +91,7 @@ def print_users():
 
     for user in users:
         print_user(user, True)
-        
+
     print ('-'*cWidth)
 
   #######
@@ -139,8 +133,8 @@ def authenticate_users():
             continue
 
         users.append(user);
-        
-        
+
+
 
 def generate_unique_message(tweetNumber, add_people = True, verbose = False):
 
@@ -148,15 +142,13 @@ def generate_unique_message(tweetNumber, add_people = True, verbose = False):
     people = [] if add_people == False else random.sample(mentionPool, num_people_to_mention);
 
     num_tags_to_add = random.choice(range(len(hashtagPool)));
-    
+
     tags = random.sample(hashtagPool, num_tags_to_add);
 
-        
-        
     message = " ".join(random.choice(tweetPool).strip().split());
 
     for must_have_tag in must_have_tags:
-        if must_have_tag not in message: 
+        if must_have_tag not in message:
             if len(message) + len(must_have_tag) + 1 >= max_tweet_len:
                 continue;
             message = message + " " + must_have_tag;
@@ -166,16 +158,16 @@ def generate_unique_message(tweetNumber, add_people = True, verbose = False):
             if tweetNumber % men_d ==0:
                 if len(message) + len(person) + 1 >= max_tweet_len:
                     continue;
-                message = message + " " + person; 
-            
-        
+                message = message + " " + person;
+
+
 
     for tag in tags:
-        if tag not in message: 
+        if tag not in message:
             if len(message) + len(tag) + 1 >= max_tweet_len:
                 continue;
             message = message + " " + tag;
-           
+
 
     if message not in messages_db:
         if verbose == True :
@@ -187,52 +179,14 @@ def generate_unique_message(tweetNumber, add_people = True, verbose = False):
         if verbose == True:
             print("The message <%s> is duplicate. Skipping." % message);
         return generate_unique_message(add_people, verbose);
-    
-    
 
-# def tweetRandomizer():
-#     """
-#     Randomly concatinate hashtags # to tweet texts. Then, shuffle the lines in the output.
-#     """
-# #     mentionPool = []
-# #     for line in mentionPoolFile:
-# #         mentionPool.append(line.strip())
-# #     hashtagPool = []
-# #     for line in hashtagPoolFile:
-# #         hashtagPool.append(line.strip())
-
-#     out1 = open("tmp.txt","w")
-#     tw_n = 0
-#     for line in TweetPoolFile:
-#         text = line.strip()
-#         for hashtag in hashtagPool:
-#             tw_n = tw_n+1
-#             if tw_n%men_d == 0:
-#                 tweetThisText="Sayin "+mentionPool[random.randint(1,len(mentionPool)-1)]+" "+text+" #1416ylsy #1416ylsyTAZMINAT "+hashtag
-#             else:
-#                 tweetThisText= text+" #1416ylsy #1416ylsyTAZMINAT "+hashtag
-#             if len(tweetThisText) > 290:
-#                 print "Character limit exceeded! Skipping the tweet...", tweetThisText
-#             else:
-#                 out1.write(tweetThisText+"\n")
-#     out1.close()
-#     #Randomize the tweet lines in the text file:
-#     out2 = open("Randomized_TweetPool.txt","w")
-#     with open("tmp.txt",'r') as outfile:
-#         lines = outfile.readlines()
-#     random.shuffle(lines)
-#     for line in lines:
-#         out2.write(line.strip()+"\n")
-
-#     os.remove("tmp.txt")
-#     return
 
 def publishTweet():
     while True:
 
         # We will quit if there are no more active (not yet banned) users
         still_active_users = False;
-        
+
         tweetCounter = 0;
 
         # Iterate through all users, post unique tweets from each account
@@ -245,9 +199,9 @@ def publishTweet():
             else:
                 still_active_users = True;
 
-            # 
+            #
             message = generate_unique_message(user["num_tweets"]);
- 
+
 
             print ('-'*cWidth)
             print (' ')
@@ -271,20 +225,20 @@ def publishTweet():
                     print("  1. Application cannot perform write actions.")
                     print("  2. Twitter account is suspended.")
 
-                    user["active"] = False;                    
+                    user["active"] = False;
                     break
 
                 if e.api_code == 185:
                     print('')
                     print("- This account reached its daily limit")
-                    user["active"] = False;                    
+                    user["active"] = False;
                     break
                 if e.api_code == 187:
                     print('')
                     print("- Status is a duplicate. You can try: ")
                     print("  1. Adding more variety of texts to tweet")
                     print("  2. Adding more hashtags to hashtagPoolFile.")
-                  #  user["active"] = False;                    
+                  #  user["active"] = False;
                     break
 
         if still_active_users == False:
@@ -300,5 +254,5 @@ def main():
     authenticate_users()
     print_users()
     publishTweet()
-    
+
 main()
