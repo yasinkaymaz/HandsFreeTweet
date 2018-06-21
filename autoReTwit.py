@@ -21,7 +21,7 @@ print(user.name)
 def main():
     search = ("1416ylsy")
 
-    numberofTweets = 25
+    numberofTweets = 250
     for tweet in tweepy.Cursor(api.search, search).items(numberofTweets):
         try:
             tweet.retweet()

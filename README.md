@@ -48,20 +48,33 @@ Now it is ready to use.
 
 ![alt text](data/3.png)
 
-**Step 4: Copy all 4 strings and paste into a text file (tokenKeyFile.txt) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret
+**Step 4: Copy all 4 strings and paste into a text file (credentials.ini) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret
 
 ![alt text](data/4.png)
 
 
-Create a tab separated tab file which stores these in the __exact__ order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
+Create a file which stores these in the order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
-**Attention!**: This file has to be only 1 line!
-Example tokenKeyFile.txt file (tab separated):
+Example credentials.ini file:
 
 ```
-$cat tokenKeyFile.txt
+$cat credentials.ini
 
-TwitWorkApp1	3RD4iElfk5Qyu22PRCQq6to4j	1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf	1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6	6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
+[Account01]
+username			: TwitWorkApp1
+consumer_key        : 3RD4iElfk5Qyu22PRCQq6to4j
+consumer_secret     : 1rZvVMnRKkBqYKNyx9G84rv3CdcHa0p4XdHl23JQua0ijf
+access_token        : 1003735820948571226309-snSxi0ILFOWflsj201H0kwlXf5MJmox6
+access_token_secret : 6XLOiy5IbKZPUeKfl39fSLiIDHJ2heTQrlywPuqbetUlYB
+
+[Account02]
+username			: TwitWorkApp1
+consumer_key        : 9wqZlB5h2PRCQd9wl3TaxlR
+consumer_secret     : X7Nm3OhCBaELjfMcWMnRKkBqY78XaHh2R6VwMDMipjfL9v
+access_token        : 1003735209485718226309-H7w5WCqdlDZRPnOWflsj201zaRP6mWJ
+access_token_secret : 0PP4Zyq1rzH39fSLiIDHJRGWyFc86uNigTOXQOtSwtL9
+
+...
 ```
 
 #### 2. Second file you need is a text file in which you store your tweets: one tweet text per line.
@@ -89,16 +102,33 @@ $ cat Hashtags.txt
 ```
 
 #### 4. Fourth file you need is a text file which contains tags per line:
-Mentiontags.txt; Put your target @twitter_users to which you want to send your tweets.
+people.txt; Put your target @twitter_users to which you want to send your tweets.
 
 ```
-$ cat Mentiontags.txt
+$ cat people.txt
 
 @MartinLutherKing
 @AlbertEinstein
 @AdrianaLima
 @MarkZukerberg
 ...
+```
+
+#### 5. Fifth file you need is a text file which stores names if banner (image) files with full directories.
+banners.txt; Please put the full directories of files on your local computer.
+
+```
+$ cat banners.txt
+
+/Users/cooluser/Documents/Banners/Ban1.jpg
+/Users/cooluser/Documents/Banners/Ban2.jpg
+/Users/cooluser/Documents/Banners/Ban3.jpg
+/Users/cooluser/Documents/Banners/Ban4.jpg
+/Users/cooluser/Documents/Banners/Ban5.jpg
+/Users/cooluser/Documents/Banners/Ban6.jpg
+/Users/cooluser/Documents/Banners/Ban7.jpg
+...
+
 ```
 
 ---

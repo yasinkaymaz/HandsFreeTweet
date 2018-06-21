@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+The majority of the code has been provided by https://github.com/ozaslan/
+"""
 
 import os
 import sys
@@ -18,28 +21,31 @@ debug = True
 parser = argparse.ArgumentParser(description='Generate tweets and post these from different accounts.')
 
 parser.add_argument('-c', '--credentials', default = 'credentials.ini', help = 'A formatted text file with credentials.')
-parser.add_argument('-m', '--messages'   , default = 'messages.txt'   , help = 'A text file with a single message at each line.')
+parser.add_argument('-m', '--messages'   , default = 'TweetPool.txt'   , help = 'A text file with a single message at each line.')
 parser.add_argument('-p', '--people'     , default = 'people.txt'     , help = 'A text file with @people at each line.')
-parser.add_argument('-t', '--tags'       , default = 'tags.txt'       , help = 'A text file with #hashtag at each line.')
+parser.add_argument('-t', '--tags'       , default = 'Hashtags.txt'       , help = 'A text file with #hashtag at each line.')
+parser.add_argument('-b', '--banners'    , default = 'banners.txt'   , help = 'A text file with banner directories at each line.')
+
 
 # Command line arguments are stores in <args>
 args = vars(parser.parse_args())
 
 
-TimeSecRangeTop = 25 #Tweeting time density. The higher, the rarer it tweets.
-men_d=8 #Density of mentions inserted into tweet texts. The higher, the more diluted. 10 means insert a random @ in evert 10 tweets.
+TimeSecRangeTop = 30 #Tweeting time density. The higher, the rarer it tweets.
+men_d=6 #Density of mentions inserted into tweet texts. The higher, the more diluted. 10 means insert a random @ in evert 10 tweets.
 
 #AccountCredentialsFile = sys.argv[1]
 tweetPool = open(args['messages'], 'r').read().splitlines();
 hashtagPool = open(args['tags'], 'r').read().splitlines();
 mentionPool = open(args['people'], 'r').read().splitlines();
+bannerPool = open(args['banners'], 'r').read().splitlines();
 
 # select tweets, tags and mentions randomly
 
 random.shuffle(tweetPool);
 random.shuffle(hashtagPool);
 random.shuffle(mentionPool);
-
+random.shuffle(bannerPool);
 
 # Use configparser library to parse the <ini> file.
 # See the sample <ini> file for syntax and mandatory fields
@@ -65,7 +71,7 @@ users = [];
 
 max_tweet_len = 240;
 
-must_have_tags = ["#1416ylsy", "#1416ylsytazminat"]
+must_have_tags = ["#1416ylsy", "#1416ylsytazminat","Teşekkürler YusufTekin","#farklıyızögretmeniz"]
 
 
 def print_user(user, printDashes = False):
@@ -210,10 +216,12 @@ def publishTweet():
 
             #
             try:
+                if random.randint(0,5) == 5:
+                    user["api"].update_with_media(bannerPool[random.randint(0,len(bannerPool)-1)],status=message)
+                else:
+                    user["api"].update_status(message)
 
-                user["api"].update_status(message)
                 user["num_tweets"] = user["num_tweets"] + 1;
-
                 print("\n- Tweet tweeted! Tweet count is [%d]" % user["num_tweets"])
 
             except tweepy.TweepError as e:
@@ -245,7 +253,7 @@ def publishTweet():
             print("There are no more active users. Exiting...")
             break;
 
-        waitDuration = random.randint(10, 20);
+        waitDuration = random.randint(20, TimeSecRangeTop);
         print("\n- Sleeping for [%d] seconds..." % waitDuration)
         time.sleep(waitDuration)
 

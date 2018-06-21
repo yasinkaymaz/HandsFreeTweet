@@ -19,11 +19,11 @@ api = tweepy.API(auth)
 user = api.me()
 #print(user.name)
 
-#MAX_TWEETS = 5000000000000000000000
-MAX_TWEETS = 500
+MAX_TWEETS = 5000000000000000000000
+#MAX_TWEETS = 50
 tc=0
 
-
+twittedout = open("tweeted.out.txt","w")
 for tweet in tweepy.Cursor(api.search, q=hashtag_query, rpp=100).items(MAX_TWEETS):
     # Do something
     tc=tc+1
@@ -31,6 +31,7 @@ for tweet in tweepy.Cursor(api.search, q=hashtag_query, rpp=100).items(MAX_TWEET
     try:
         #tweet.retweet()
         print tweet.created_at, tweet.text
+        twittedout.write(str(tweet.created_at)+"\t"+tweet.text.encode('utf-8')+"\n")
         #print("Tweet Retweeted")
     except tweepy.TweepError as e:
         print(e.reason)
