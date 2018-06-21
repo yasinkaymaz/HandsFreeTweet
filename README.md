@@ -39,19 +39,22 @@ Now it is ready to use.
 **Step 1:**
 
 ![alt text](data/1.png)
+---
 
 **Step 2: Fill the form and create the application.**
 
 ![alt text](data/2.png)
+---
 
 **Step 3: Navigate to Keys and Access Token tab, and create "my access token" far below.**
 
 ![alt text](data/3.png)
+---
 
 **Step 4: Copy all 4 strings and paste into a text file (credentials.ini) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret
 
 ![alt text](data/4.png)
-
+---
 
 Create a file which stores these in the order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
 
