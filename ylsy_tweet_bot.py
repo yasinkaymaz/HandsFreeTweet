@@ -1,6 +1,7 @@
 # coding=utf-8
 '''
-MEB Bursiyerlerinden Bilal Celik tarafindan paylasildi.
+BilalCe tarafindan paylasildi...
+
 '''
 
 import tweepy, sys, time
