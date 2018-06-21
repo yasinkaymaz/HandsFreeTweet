@@ -71,7 +71,7 @@ users = [];
 
 max_tweet_len = 240;
 
-must_have_tags = ["#1416ylsy", "#1416ylsytazminat","Teşekkürler YusufTekin","#farklıyızögretmeniz"]
+must_have_tags = ["#1416ylsy", "#1416ylsytazminat"]
 
 
 def print_user(user, printDashes = False):
