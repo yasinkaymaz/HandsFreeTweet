@@ -39,21 +39,25 @@ Now it is ready to use.
 **Step 1:**
 
 ![alt text](data/1.png)
+
 ---
 
 **Step 2: Fill the form and create the application.**
 
 ![alt text](data/2.png)
+
 ---
 
 **Step 3: Navigate to Keys and Access Token tab, and create "my access token" far below.**
 
 ![alt text](data/3.png)
+
 ---
 
 **Step 4: Copy all 4 strings and paste into a text file (credentials.ini) as instructed below.** consumer_key, consumer_secret, access_token, access_token_secret
 
 ![alt text](data/4.png)
+
 ---
 
 Create a file which stores these in the order: **ApplicationName**, **consumer_key**, **consumer_secret**, **access_token**, **access_token_secret**
@@ -80,6 +84,16 @@ access_token_secret : 0PP4Zyq1rzH39fSLiIDHJRGWyFc86uNigTOXQOtSwtL9
 ...
 ```
 
+#### OPTIONAL: Download the required files
+
+Using this link you can download the rest of the files and modify them according to your preference.
+https://drive.google.com/drive/folders/1_-fSR8-6Rn5Iv9dKSlVm6uTELn7rQC2g
+
+__Please don't forget to change the directories in the banners.txt file.__
+
+#### OR follow the guidelines below to create each of those yourself..
+
+
 #### 2. Second file you need is a text file in which you store your tweets: one tweet text per line.
 Put your tweets into this file. Please don't include any @s and #s in this file. Just plain text.
 ```
@@ -88,6 +102,7 @@ $cat TweetPool.txt
 I want to fly today!
 Happy tweets everybody..
 Hello world, I am friendly.
+
 ...
 ```
 
@@ -100,6 +115,7 @@ $ cat Hashtags.txt
 #LifeisLife
 #MondaySyndrome
 #PartyTime
+
 ...
 
 ```
@@ -114,6 +130,7 @@ $ cat people.txt
 @AlbertEinstein
 @AdrianaLima
 @MarkZukerberg
+
 ...
 ```
 
@@ -130,6 +147,7 @@ $ cat banners.txt
 /Users/cooluser/Documents/Banners/Ban5.jpg
 /Users/cooluser/Documents/Banners/Ban6.jpg
 /Users/cooluser/Documents/Banners/Ban7.jpg
+
 ...
 
 ```
