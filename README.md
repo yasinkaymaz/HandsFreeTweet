@@ -28,6 +28,20 @@ cd HandsFreeTweet
 
 Now it is ready to use.
 
+Before running the script, make sure that all input files are in the same folder (HandsFreeTweet) as autoTweet.py!
+
+```
+cd HandsFreeTweet
+
+python autoTweet.py -c credentials.ini -m TweetPool.txt -p people.txt -t Hashtags.txt -b banners.txt
+```
+
+Or simply run as below if you already have input files stored in the execution folder:
+
+```
+python autoTweet.py
+```
+
 ---
 
 ### What files you need:
@@ -155,12 +169,5 @@ $ cat banners.txt
 ---
 
 ## Start Running your autoTweeting motor.
-Before running the script, make sure that all input files are in the same folder (HandsFreeTweet) as autoTweet.py!
-
-```
-cd HandsFreeTweet
-
-python autoTweet.py tokenKeyFile.txt Tweetpool.txt Hashtags.txt Mentiontags.txt
-```
 
 **Happy Tweetings!!!**
