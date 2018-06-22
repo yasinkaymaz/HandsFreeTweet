@@ -19,6 +19,13 @@ sudo python setup.py install
 ```
 You can also follow the instructions here: https://github.com/tweepy/tweepy
 
+And please install Configparser
+
+```
+pip install configparser
+```
+
+
 **Then**, download this code to your computer by typing the following:
 ```
 git clone https://github.com/yasinkaymaz/HandsFreeTweet.git
