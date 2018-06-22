@@ -6,7 +6,7 @@ This repository provides a collection of codes for tweeting while working...
 ### How to install:
 Assuming that you already have python installed in your computer.
 
-**First**, you need to install tweepy module:
+**First**, you need to __install tweepy__ module:
 
 ```
 sudo pip install tweepy
@@ -19,7 +19,7 @@ sudo python setup.py install
 ```
 You can also follow the instructions here: https://github.com/tweepy/tweepy
 
-And please install Configparser
+And please __install Configparser__
 
 ```
 pip install configparser
