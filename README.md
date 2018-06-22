@@ -22,7 +22,7 @@ You can also follow the instructions here: https://github.com/tweepy/tweepy
 And please __install Configparser__
 
 ```
-pip install configparser
+sudo pip install configparser
 ```
 
 
